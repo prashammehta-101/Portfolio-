@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prasham Mehta — Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ============ SCROLL PROGRESS ============ -->
+    <div id="scroll-progress"></div>
+    <!-- ============ NAVBAR ============ -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">PM<span class="dot">.</span></a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#github">GitHub</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <button id="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">◑</span>
+          </button>
+          <button
+            class="nav-cta"
+            onclick="
+              document
+                .getElementById('contact')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Hire Me
+          </button>
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#about" class="mob-link">About</a>
+        <a href="#skills" class="mob-link">Skills</a>
+        <a href="#projects" class="mob-link">Projects</a>
+        <a href="#github" class="mob-link">GitHub</a>
+        <a href="#blog" class="mob-link">Blog</a>
+        <a href="#contact" class="mob-link">Contact</a>
+      </div>
+    </nav>
+    <!-- ============ HERO ============ -->
+    <section id="hero">
+      <canvas id="particle-canvas"></canvas>
+      <div class="hero-content">
+        <div class="hero-badge">✦ Available for Opportunities</div>
+        <h1 class="hero-name">
+          Prasham<br /><span class="name-accent">Mehta</span>
+        </h1>
+        <div class="hero-typing-wrapper">
+          <span class="typing-prefix">I </span> <span id="typed-text"></span>
+          <span class="cursor-blink">|</span>
+        </div>
+        <p class="hero-sub">
+          A student developer crafting digital experiences that blend elegant
+          code with thoughtful design.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary"
+            ><span>View Projects</span
+            ><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg
+          ></a>
+          <a href="#contact" class="btn-ghost">Contact Me</a>
+        </div>
+        <div class="hero-floating-icons">
+          <div class="float-icon" style="--d: 0s; --x: -80px; --y: -40px">
+            <span>&#60;/&#62;</span>
+          </div>
+          <div class="float-icon" style="--d: 0.8s; --x: 80px; --y: -60px">
+            <span>JS</span>
+          </div>
+          <div class="float-icon" style="--d: 1.4s; --x: -60px; --y: 60px">
+            <span>CSS</span>
+          </div>
+          <div class="float-icon" style="--d: 0.4s; --x: 100px; --y: 50px">
+            <span>UI</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+    <!-- ============ TERMINAL EASTER EGG ============ -->
+    <div id="terminal-overlay" class="hidden">
+      <div id="terminal-box">
+        <div class="term-bar">
+          <div class="term-dot red"></div>
+          <div class="term-dot yellow"></div>
+          <div class="term-dot green"></div>
+          <span class="term-title">prasham@portfolio ~ </span>
+          <button id="term-close">✕</button>
+        </div>
+        <div id="term-output"></div>
+        <div class="term-input-row">
+          <span class="term-prompt">&#62; </span>
+          <input
+            type="text"
+            id="term-input"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="type 'help'"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section-pad">
+      <div class="container">
+        <div class="section-label">// 01. ABOUT</div>
+        <div class="about-grid">
+          <div class="about-visual">
+            <div class="about-avatar">
+              <div class="avatar-ring"></div>
+              <div class="avatar-core">PM</div>
+              <div class="avatar-orbit" style="--r: 100px; --dur: 8s"></div>
+              <div
+                class="avatar-orbit"
+                style="--r: 140px; --dur: 12s; --delay: -4s"
+              ></div>
+            </div>
+            <div class="about-stats">
+              <div class="stat-chip">
+                <span class="stat-num">10+</span><span>Projects</span>
+              </div>
+              <div class="stat-chip">
+                <span class="stat-num">1+</span><span>Years Learning</span>
+              </div>
+              <div class="stat-chip">
+                <span class="stat-num">∞</span><span>Curiosity</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-text">
+            <h2 class="section-title">
+              Building the web,<br /><em>one commit at a time</em>
+            </h2>
+            <p>
+              I'm <strong>Prasham Mehta</strong>, a passionate student developer
+              from India who loves turning ideas into interactive digital
+              experiences. My journey started with a single HTML file and has
+              grown into a love for clean code, intuitive UI, and creative
+              problem-solving.
+            </p>
+            <p>
+              When I'm not coding, I'm exploring new technologies, contributing
+              to open source, or writing about my developer journey. I believe
+              great software is equal parts logic and empathy.
+            </p>
+            <div class="about-tags">
+              <span class="tag">Frontend Dev</span>
+              <span class="tag">UI Designer</span>
+              <span class="tag">Open Source</span>
+              <span class="tag">Problem Solver</span>
+              <span class="tag">Student</span>
+            </div>
+            <div class="about-links">
+              <a href="#contact" class="btn-primary sm"
+                ><span>Let's Talk</span
+                ><svg viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" /></svg
+              ></a>
+              <button class="btn-ghost sm" id="open-terminal">
+                Open Terminal ⌘
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section-pad alt-bg">
+      <div class="container">
+        <div class="section-label">// 02. SKILLS</div>
+        <h2 class="section-title center">My Toolkit</h2>
+        <p class="section-sub center">
+          Technologies and disciplines I've sharpened over my journey
+        </p>
+        <div class="skills-grid">
+          <!-- Skill Bars -->
+          <div class="skills-bars">
+            <h3 class="skills-cat">Proficiency</h3>
+            <div class="skill-row" data-pct="90">
+              <div class="skill-info">
+                <span>HTML5</span><span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+            </div>
+            <div class="skill-row" data-pct="70">
+              <div class="skill-info">
+                <span>CSS3 / SCSS</span><span class="skill-pct">70%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+            </div>
+            <div class="skill-row" data-pct="60">
+              <div class="skill-info">
+                <span>JavaScript</span><span class="skill-pct">60%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+            </div>
+            <div class="skill-row" data-pct="70">
+              <div class="skill-info">
+                <span>UI / UX Design</span><span class="skill-pct">70%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+            </div>
+            <div class="skill-row" data-pct="75">
+              <div class="skill-info">
+                <span>Problem Solving</span><span class="skill-pct">75%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+            </div>
+            <div class="skill-row" data-pct="65">
+              <div class="skill-info">
+                <span>Git / GitHub</span><span class="skill-pct">65%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+            </div>
+          </div>
+          <!-- Skill Cards -->
+          <div class="skills-cards">
+            <h3 class="skills-cat">Technologies</h3>
+            <div class="tech-grid">
+              <div class="tech-card">
+                <div class="tech-icon">🌐</div>
+                <span>HTML5</span>
+              </div>
+              <div class="tech-card">
+                <div class="tech-icon">🎨</div>
+                <span>CSS3</span>
+              </div>
+              <div class="tech-card">
+                <div class="tech-icon">⚡</div>
+                <span>JavaScript</span>
+              </div>
+              <div class="tech-card">
+                <div class="tech-icon">🔧</div>
+                <span>Git</span>
+              </div>
+              <div class="tech-card">
+                <div class="tech-icon">📐</div>
+                <span>Figma</span>
+              </div>
+              <div class="tech-card">
+                <div class="tech-icon">🚀</div>
+                <span>GitHub</span>
+              </div>
+              <div class="tech-card">
+                <div class="tech-icon">📦</div>
+                <span>npm</span>
+              </div>
+              <div class="tech-card">
+                <div class="tech-icon">💻</div>
+                <span>VSCode</span>
+              </div>
+              <div class="tech-card">
+                <div class="tech-icon">🔥</div>
+                <span>Firebase</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section-pad">
+      <div class="container">
+        <div class="section-label">// 03. PROJECTS</div>
+        <h2 class="section-title">Things I've Built</h2>
+        <p class="section-sub">
+          A curated selection of my work — from idea to deployment
+        </p>
+        <div class="projects-grid">
+
+          <!-- Project 1: Shaday Store -->
+          <div class="project-card featured">
+            <div class="project-img">
+              <div class="project-mockup shaday-store">
+                <div class="mock-bar"></div>
+                <div class="mock-content">
+                  <div class="mock-icon">👕</div>
+                  <div class="mock-lines">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tag">Featured</div>
+              <h3>Shaday Store</h3>
+              <p>
+                A modern shirt selling e-commerce website with a clean product
+                catalogue, stylish UI, and smooth browsing experience for
+                fashion-forward shoppers.
+              </p>
+              <div class="project-tech">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/prashammehta-101/shaday-store" target="_blank" class="btn-primary sm"
+                  ><span>Live Demo</span
+                  ><svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" /></svg
+                ></a>
+                <a href="https://github.com/prashammehta-101/shaday-store" target="_blank" class="btn-ghost sm">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: BitByteGo -->
+          <div class="project-card">
+            <div class="project-img">
+              <div class="project-mockup bitbytego">
+                <div class="mock-bar"></div>
+                <div class="mock-content">
+                  <div class="mock-icon">🖥️</div>
+                  <div class="mock-lines">
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>BitByteGo</h3>
+              <p>
+                A professional committee website for a tech community — featuring
+                team info, events, announcements, and a clean collaborative
+                digital presence.
+              </p>
+              <div class="project-tech">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/prashammehta-101/bitbytego" target="_blank" class="btn-primary sm"><span>Live Demo</span></a>
+                <a href="https://github.com/prashammehta-101/bitbytego" target="_blank" class="btn-ghost sm">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Portfolio Website -->
+          <div class="project-card">
+            <div class="project-img">
+              <div class="project-mockup portfolio-site">
+                <div class="mock-bar"></div>
+                <div class="mock-content">
+                  <div class="mock-icon">🚀</div>
+                  <div class="mock-lines">
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Portfolio Website</h3>
+              <p>
+                This very portfolio — a fully responsive, animated developer
+                showcase built from scratch with vanilla HTML, CSS & JS. Dark mode,
+                particles, and more.
+              </p>
+              <div class="project-tech">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/prashammehta-101" target="_blank" class="btn-primary sm"><span>Live Demo</span></a>
+                <a href="https://github.com/prashammehta-101" target="_blank" class="btn-ghost sm">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ============ GITHUB ============ -->
+    <section id="github" class="section-pad alt-bg">
+      <div class="container">
+        <div class="section-label">// 04. GITHUB</div>
+        <h2 class="section-title">My GitHub</h2>
+        <p class="section-sub">Check out my work and open source contributions</p>
+        <div class="github-profile-card">
+          <div class="gh-profile-left">
+            <div class="gh-avatar">
+              <span>PM</span>
+            </div>
+            <div class="gh-info">
+              <h3>Prasham Mehta</h3>
+              <span class="gh-username">@prashammehta-101</span>
+              <p>Student developer building projects with HTML, CSS &amp; JavaScript. Open to collaborations and contributions.</p>
+              <div class="gh-meta">
+                <span>📍 India</span>
+                <span>🎓 Student Developer</span>
+                <span>💻 Open Source Enthusiast</span>
+              </div>
+            </div>
+          </div>
+          <div class="gh-profile-right">
+            <div class="gh-stat-row">
+              <div class="gh-stat"><span class="gh-stat-num">3+</span><span>Repositories</span></div>
+              <div class="gh-stat"><span class="gh-stat-num">1+</span><span>Years Active</span></div>
+              <div class="gh-stat"><span class="gh-stat-num">∞</span><span>Commits</span></div>
+            </div>
+            <div class="gh-repos-list">
+              <a href="https://github.com/prashammehta-101/shaday-store" target="_blank" class="gh-repo-item">
+                <div class="gh-repo-info">
+                  <span class="gh-repo-icon">📁</span>
+                  <div>
+                    <strong>shaday-store</strong>
+                    <span>Shirt selling e-commerce website</span>
+                  </div>
+                </div>
+                <span class="gh-repo-arrow">→</span>
+              </a>
+              <a href="https://github.com/prashammehta-101/bitbytego" target="_blank" class="gh-repo-item">
+                <div class="gh-repo-info">
+                  <span class="gh-repo-icon">📁</span>
+                  <div>
+                    <strong>bitbytego</strong>
+                    <span>Tech committee website</span>
+                  </div>
+                </div>
+                <span class="gh-repo-arrow">→</span>
+              </a>
+              <a href="https://github.com/prashammehta-101" target="_blank" class="gh-repo-item">
+                <div class="gh-repo-info">
+                  <span class="gh-repo-icon">📁</span>
+                  <div>
+                    <strong>portfolio</strong>
+                    <span>Personal developer portfolio</span>
+                  </div>
+                </div>
+                <span class="gh-repo-arrow">→</span>
+              </a>
+            </div>
+            <a href="https://github.com/prashammehta-101" target="_blank" class="btn-primary sm gh-cta-btn">
+              <span>Visit GitHub Profile</span>
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============ BLOG ============ -->
+    <section id="blog" class="section-pad">
+      <div class="container">
+        <div class="section-label">// 05. BLOG</div>
+        <h2 class="section-title">Thoughts & Articles</h2>
+        <p class="section-sub">
+          Writing about things I learn, build, and discover
+        </p>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-meta">
+              <span class="blog-date">Mar 2025</span>
+              <span class="blog-cat">Project</span>
+            </div>
+            <h3>How I Built My Crop Advisory System</h3>
+            <p>
+              A deep dive into how I designed and built an AI-assisted crop
+              advisory platform from scratch — the challenges, solutions, and
+              lessons learned.
+            </p>
+            <a href="#" class="blog-read">Read Article <span>→</span></a>
+          </article>
+          <article class="blog-card">
+            <div class="blog-meta">
+              <span class="blog-date">Jan 2025</span>
+              <span class="blog-cat">HTML</span>
+            </div>
+            <h3>Beginner Mistakes in HTML I Wish I Avoided</h3>
+            <p>
+              From semantic tags to accessibility blunders — the top mistakes
+              beginners make in HTML and how to sidestep them from day one.
+            </p>
+            <a href="#" class="blog-read">Read Article <span>→</span></a>
+          </article>
+          <article class="blog-card">
+            <div class="blog-meta">
+              <span class="blog-date">Dec 2024</span>
+              <span class="blog-cat">Journey</span>
+            </div>
+            <h3>My Journey Learning JavaScript</h3>
+            <p>
+              From console.log("hello") to async/await — how I went from a
+              confused beginner to someone who genuinely enjoys writing
+              JavaScript every day.
+            </p>
+            <a href="#" class="blog-read">Read Article <span>→</span></a>
+          </article>
+          <article class="blog-card">
+            <div class="blog-meta">
+              <span class="blog-date">Nov 2024</span>
+              <span class="blog-cat">CSS</span>
+            </div>
+            <h3>CSS Grid vs Flexbox: When to Use Which</h3>
+            <p>
+              A practical, visual breakdown of when to reach for CSS Grid versus
+              Flexbox — illustrated with real layout examples from my projects.
+            </p>
+            <a href="#" class="blog-read">Read Article <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section-pad alt-bg">
+      <div class="container">
+        <div class="section-label">// 06. CONTACT</div>
+        <div class="contact-grid">
+          <div class="contact-left">
+            <h2 class="section-title">
+              Let's build<br /><em>something great</em>
+            </h2>
+            <p>
+              Have a project in mind, a question, or just want to say hi? My
+              inbox is always open. I'll get back to you within 24 hours.
+            </p>
+            <div class="contact-info">
+              <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <a href="mailto:prashammehta101@gmail.com">prashammehta101@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📍</span> <span>India</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">🐙</span>
+                <a href="https://github.com/prashammehta-101" target="_blank"
+                  >github.com/prashammehta-101</a
+                >
+              </div>
+            </div>
+            <div class="social-row">
+              <a href="https://github.com/prashammehta-101" target="_blank" class="social-btn" aria-label="GitHub">GH</a>
+              <a href="https://www.linkedin.com/in/prasham-mehta-66ba12345" target="_blank" class="social-btn" aria-label="LinkedIn">LI</a>
+              <a href="mailto:prashammehta101@gmail.com" class="social-btn" aria-label="Gmail">GM</a>
+            </div>
+          </div>
+          <div class="contact-right">
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  autocomplete="off"
+                />
+                <span class="field-error" id="name-err"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  autocomplete="off"
+                />
+                <span class="field-error" id="email-err"></span>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tell me about your project…"
+                ></textarea>
+                <span class="field-error" id="msg-err"></span>
+              </div>
+              <button type="submit" class="btn-primary full" id="submit-btn">
+                <span id="btn-text">Send Message</span>
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" />
+                </svg>
+              </button>
+              <div id="form-feedback" class="hidden"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============ FOOTER ============ -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <span class="nav-logo">PM<span class="dot">.</span></span>
+            <p>Crafting digital experiences<br />with code & creativity.</p>
+          </div>
+          <div class="footer-links-col">
+            <strong>Navigate</strong> <a href="#about">About</a>
+            <a href="#skills">Skills</a> <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-links-col">
+            <strong>Connect</strong>
+            <a href="https://github.com/prashammehta-101" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/prasham-mehta-66ba12345" target="_blank">LinkedIn</a>
+            <a href="mailto:prashammehta101@gmail.com">Gmail</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2025 Prasham Mehta. Built with ☕ & curiosity.</span>
+          <button
+            class="back-top"
+            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          >
+            ↑ 
